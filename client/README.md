@@ -7,17 +7,17 @@ ___________
 
 ### Software versions
 - React 18.2.0
-## Problems in the project:
+### Problems in the project:
 1.
 2.
 
-## How to use
+### How to use
 
-## Photos of project:
+### Photos of project:
 
-## Apps used:
+### Apps used:
 - VS Code.
 
-## Coding styles I used:
+### Coding styles I used:
 
-## How was it like doing this project this time?
+### How was it like doing this project this time?
