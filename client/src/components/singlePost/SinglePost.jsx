@@ -19,7 +19,7 @@ export default function SinglePost() {
                 <span className="singlePostAuthor">Author: <b>Safak</b></span>
                 <span className="singlePostDate">1 hour ago</span>
             </div>
-            <p>
+            <p className="singlePostDesc">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Ad officia perspiciatis obcaecati at exercitationem minima,
                 voluptatem, voluptatum, enim aliquid maiores natus molestias quae
