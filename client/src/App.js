@@ -4,12 +4,29 @@ import Single from './components/pages/single/Single';
 import Write from './components/pages/write/Write';
 import Settings from './components/pages/settings/Settings';
 import Login from './components/pages/login/Login'
+import Register from './components/pages/register/Register';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom';
+
+
 function App() {
   return (
-    <>
+    <Router>
       <TopBar />
-      <Login />
-    </>
+      <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/register">
+            <Register />
+          </Route>
+      </Switch>
+      <Register />
+    </Router>
   );
 }
 
