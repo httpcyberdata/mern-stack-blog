@@ -12,12 +12,17 @@ ___________
 2.
 
 ### How to use
-
+1. Clone / Download
+2. cd into the react-blog folder
+3. yarn install or npm install
+4. yarn start or npm start
 ### Photos of project:
-
+![Modern input](/client/public/modern_input.png)
 ### Apps used:
 - VS Code.
+- Vivaldi 
 
 ### Coding styles I used:
-
+Single brackets instead
 ### How was it like doing this project this time?
+Boring, fun, sad, exciting at different times. Creating that modern input style was effortless than what it seemed. Using Vivladi browser rather than Chrome and Vivaldi shows you the time it took to download an item and more information about what you downloaded.
