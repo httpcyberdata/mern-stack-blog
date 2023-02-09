@@ -25,4 +25,4 @@ ___________
 ### Coding styles I used:
 Single brackets instead
 ### How was it like doing this project this time?
-Boring, fun, sad, exciting at different times. Creating that modern input style was effortless than what it seemed. Using Vivladi browser rather than Chrome and Vivaldi shows you the time it took to download an item and more information about what you downloaded.
+Boring, fun, sad, exciting at different times. Creating that modern input style was effortless than what it seemed. Using Vivladi browser rather than Chrome and Vivaldi shows you the time it took to download an item and more information about what you downloaded. How to play with app development and imagine real users interacting with your app but not in reality. 
