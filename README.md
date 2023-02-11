@@ -8,7 +8,23 @@ ___________
 ### Software versions
 - React 18.2.0
 ### Problems in the project:
-1.
+1. **500 Internal Server Error**
+The POST request to the API didn't respond with a custom json text of "Wrong credentials" instead a 500 bad request.
+The problem was I wrote req.status instead of res.status.
+
+```
+    // incorrect:
+    !user && req.status(400).json('Wrong credentials!');
+    !validated  &&  req.status(400).json("Wrong credentials!");
+```
+
+```
+    // correct: 
+    !user && res.status(400).json('Wrong credentials!');
+    !validated  &&  res.status(400).json("Wrong credentials!");
+```
+ There is no such thing as a request status only a response because a response sends a status back
+
 2.
 
 ### How to use
@@ -21,6 +37,7 @@ ___________
 ### Apps used:
 - VS Code.
 - Vivaldi 
+- Mongo DB Compass 1.35.0 (Mac OS Ventura as Mojave is outdated)
 
 ### Coding styles I used:
 Single brackets instead
@@ -28,7 +45,7 @@ Single brackets instead
 Boring, fun, sad, exciting at different times. Creating that modern input style was effortless than what it seemed. Using Vivladi browser rather than Chrome and Vivaldi shows you the time it took to download an item and more information about what you downloaded. How to play with app development and imagine real users interacting with your app but not in reality. 
 
 ### What I learned in this project:
-*** The extra information in a mongo object and why developers would only want to use the ._doc object. I can't take the properties exactly from the user object and instead only in this use case only need ._doc
+The extra information in a mongoDB object and why developers would only want to use the ._doc object. I can't take the properties exactly from the user object and instead only in this use case one would only need ._doc
 ```
         // Full user object
             {
@@ -77,21 +94,3 @@ Boring, fun, sad, exciting at different times. Creating that modern input style 
 ```
 
 
-### Problems in the project
-
-** 500 Internal Server Error
-The POST request to the API didn't respond with a custom json text of "Wrong credentials" instead a 500 bad request.
-The problem was I wrote req.status instead of res.status.
-
-```
-    // incorrect:
-    !user && req.status(400).json('Wrong credentials!');
-    !validated  &&  req.status(400).json("Wrong credentials!");
-```
-
-```
-    // correct: 
-    !user && res.status(400).json('Wrong credentials!');
-    !validated  &&  res.status(400).json("Wrong credentials!");
-```
- There is no such thing as a request status only a response because a response sends a status back
