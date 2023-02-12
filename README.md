@@ -1,5 +1,6 @@
 # React Blog Website Design Tutorial
-![]
+![](images/main-mern-stack-blog-image.png)
+![](images/secondary-mern-stack-blog-image.png)
 Tutorial URL: https://www.youtube.com/watch?v=tlTdbc5byAs&t=0s
 Tutorial description: How to create a blog website using React.js. Blog app React project from scratch for beginners. Design React blog app using functional React components and React Router Dom. First part. Next parts: second -> https://youtu.be/OML9f6LXUUs & third -> https://youtu.be/LelifxOrzvw
 
@@ -25,7 +26,30 @@ The problem was I wrote req.status instead of res.status.
 ```
  There is no such thing as a request status only a response because a response sends a status back
 
-2.
+2. "codeName": "FailedToParse" 
+    No matter the request body sent to the server, the server returned a response of 500 and MongoDB gave a "failed to parse error". Which means MongoDB failed to parse something, so it wasn't NodeJS which failed to parse something or NodeJS internals. 
+    The issue was somewhere in this try/catch block.
+    ```
+         try {
+            const updatedUser = await User.findByIdAndUpdate(
+                req.params.id, 
+                {
+                // incorrect!
+                $sat: req.body,
+                },
+                { new: true }
+            );
+            res.status(200).json(updatedUser);
+        } catch (err) { 
+            res.status(500).json(err);
+        }
+    ```
+    I misspelled $set as $sat which caused MongoDB to fail to parse it's query parameters. 
+    The correct way was:
+    ```
+        $set: req.body,
+    ```
+
 
 ### How to use
 1. Clone / Download
