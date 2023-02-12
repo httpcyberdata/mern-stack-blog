@@ -26,7 +26,7 @@ The problem was I wrote req.status instead of res.status.
 ```
  There is no such thing as a request status only a response because a response sends a status back
 
-2. "codeName": "FailedToParse" 
+2. **"codeName": "FailedToParse"**
     No matter the request body sent to the server, the server returned a response of 500 and MongoDB gave a "failed to parse error". Which means MongoDB failed to parse something, so it wasn't NodeJS which failed to parse something or NodeJS internals. 
     The issue was somewhere in this try/catch block.
     ```
@@ -65,7 +65,17 @@ The problem was I wrote req.status instead of res.status.
 - Mongo DB Compass 1.35.0 (Mac OS Ventura as Mojave is outdated)
 
 ### Coding styles I used:
-Single brackets instead
+Single quotes instead of double quotes for imports
+
+**Single quotes:**
+```
+    import './header.css'
+```
+**Double quotes:**
+```
+    import "./header.css"
+```
+
 ### How was it like doing this project this time?
 Boring, fun, sad, exciting at different times. Creating that modern input style was effortless than what it seemed. Using Vivladi browser rather than Chrome and Vivaldi shows you the time it took to download an item and more information about what you downloaded. How to play with app development and imagine real users interacting with your app but not in reality. 
 
