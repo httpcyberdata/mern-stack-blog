@@ -54,8 +54,9 @@ The problem was I wrote req.status instead of res.status.
 ### How to use
 1. Clone / Download
 2. cd into the react-blog folder
-3. yarn install or npm install
-4. yarn start or npm start
+3. cd into client folder & run npm install first and npm start second
+4. cd into api folder & run npm install first and npm start second
+
 ### Photos of project:
 ![Modern input](/client/public/modern_input.png)
 ### Apps used:
