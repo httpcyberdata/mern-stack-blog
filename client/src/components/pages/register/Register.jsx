@@ -1,13 +1,20 @@
 import './register.css'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 export default function Register() {
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("")
     
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        const res = await axios.post('/auth/register', {
+            username,
+            email,
+            password
+        });
+        console.log(res);
     }
   return (
     <div className="register">
@@ -29,7 +36,7 @@ export default function Register() {
             />
             <label>Password</label>
             <input 
-                type="text" 
+                type="password" 
                 className="registerInput" 
                 placeholder="Enter your password..." 
                 onChange={e => setPassword(e.target.value)}
