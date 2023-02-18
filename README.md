@@ -1,4 +1,4 @@
-# React Blog Website Design Tutorial
+# React Blog Website Design Tutorial (failed)
 ![](images/main-mern-stack-blog-image.png)
 ![](images/secondary-mern-stack-blog-image.png)
 Tutorial URL: https://www.youtube.com/watch?v=tlTdbc5byAs&t=0s
@@ -49,7 +49,13 @@ The problem was I wrote req.status instead of res.status.
     ```
         $set: req.body,
     ```
-
+3. **400 Server error** (reason for uncomplete project)
+    ```
+        Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    ```
+    ```
+    Proxy error: Could not proxy request /auth/login from localhost:3000 to http://localhost:4000/api.
+    ```
 
 ### How to use
 1. Clone / Download

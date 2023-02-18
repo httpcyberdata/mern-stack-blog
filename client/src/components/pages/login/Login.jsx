@@ -2,11 +2,13 @@ import './login.css';
 import { Context } from '../../../context/Context';
 import { Link } from 'react-router-dom';
 import { useRef } from 'react';
+import axios from 'axios';
+import { useContext } from 'react';
 export default function Login() {
 
   const userRef = useRef();
-  const passwordRef = useRef()
-  const { dispatch, isFetching} = useContext(Context)
+  const passwordRef = useRef();
+  const { user, dispatch, isFetching} = useContext(Context)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,9 +20,10 @@ export default function Login() {
       })
       dispatch({type: "LOGIN_SUCCESS", payload: res.data})
     } catch(err) {
-        
+        dispatch({type: "LOGIN_FAILURE"})
     }
   }
+  console.log(user);  
   return (
     <div className="login">
         <span className="loginTitle">Login</span>
@@ -35,7 +38,7 @@ export default function Login() {
 
             <label>Password</label>
             <input 
-              type="text" 
+              type="password" 
               className="loginInput" 
               placeholder="Enter your email..." 
               ref={passwordRef}
